@@ -10,7 +10,16 @@
 				<li>Pardone me</li>
 				<li>I am not enough smart to handle this.</li>
 				<li>Sorry, Can you repete please</li>
+				
 			</random>
+			<reply>
+				    <text>Watch our Menu</text>
+				    <postback>menu</postback>
+			    </reply>
+			    <reply>
+				    <text>Picture Menu</text>
+				    <postback>menu2</postback>
+			 </reply>
 		</template>
 	</category>
 	<!-- Exceptions Ends -->
@@ -98,7 +107,7 @@
 			    <li>GOGA Pizza -------- Price: 420Tk [Code : p2]</li>
 			    <li>Moghlai Pizza ----- Price: 550Tk [Code : p3]</li>
 			    <li>Mojar Pizza ------- Price: 250TK [Code : p4]</li>
-			    <li>Goriber Pizza ----- Price: 9TK   [Code : p5]</li>
+			    <li>Goriber Pizza ----- Price: 99TK   [Code : p5]</li>
 			    <li>NameMatro Pizza --- Price: 29TK  [Code : p6]</li>
 		    </ol>
 			To order any item please type item code and press enter.(ex: "p3")<br/>
@@ -112,19 +121,23 @@
 		    </reply>
 		    <reply>
 			    <text>Moghlai Pizza</text>
-			    <postback>Menu</postback>
+			    <postback>p3</postback>
 		    </reply>
 		    <reply>
 			    <text>Mojar Pizza</text>
-			    <postback>Menu</postback>
+			    <postback>p4</postback>
 		    </reply>
 		    <reply>
 			    <text>Goriber Pizza</text>
-			    <postback>Menu</postback>
+			    <postback>p5</postback>
 		    </reply>
 		    <reply>
 			    <text>NameMatro Pizza</text>
-			    <postback>Menu</postback>
+			    <postback>p6</postback>
+		    </reply>
+		    <reply>
+			    <text>Picture Menu</text>
+			    <postback>menu2</postback>
 		    </reply>
 		</template>
 	</category>
@@ -163,7 +176,11 @@
 			<reply>
 				    <text>Watch our Menu</text>
 				    <postback>menu</postback>
-			    </reply>
+			</reply>
+			<reply>
+				    <text>Pizza Picture</text>
+				    <postback>menu2</postback>
+			</reply>
 		</template>
 	</category>
 	<category><pattern>what</pattern><template><srai>what is this</srai></template></category>
@@ -292,7 +309,7 @@
 			<card>
                  <title>You selected "MOJAR Pizza"</title>
                  <subtitle>Price: 220Tk</subtitle>
-                 <image>https://i.ibb.co/GFG9NVC/P3.jpg</image>
+                 <image>https://i.ibb.co/H28Phym/pexels-photo-2918521.jpg</image>
                  <button>
                     <text>Order Now</text>
                     <postback>now</postback>
@@ -331,7 +348,7 @@
 			<card>
                  <title>You selected "NameMatro Pizza"</title>
                  <subtitle>Price: 29Tk</subtitle>
-                 <image>https://i.ibb.co/SxVBgsc/p6.jpg</image>
+                 <image>https://i.ibb.co/fGrnpvb/close-up-photography-of-pizza-1166120.jpg</image>
                  <button>
                     <text>Order Now</text>
                     <postback>now</postback>
@@ -357,7 +374,6 @@
 	<category>
 		<pattern>number *</pattern>
 		<template>
-			
 			Here is your info:<br/>
 			Name : <get name = "username"/><br/>
 			Number : <set name = "usernumber"> <star/> </set><br/>
@@ -388,6 +404,48 @@
 		</template>
 	</category>
 	
+	<!-- ======================== EXEPTIONS ========================================== -->
+	<category>
+	    <pattern>what is your name</pattern>
+	    <template>Hi I am a bot from Dhiman Pizza Shop.You can call me "Dhimu". What is your name?</template>
+    </category>
+    <category>
+		<pattern>My name is *</pattern>
+		<template>
+			Hello <set name = "username"> <star/> </set>!  <br/>
+			How can I help you?<br/>
+		</template>
+	</category>
+	<category>
+		<pattern>i am *</pattern>
+		<template>
+			Hello <set name = "username"> <star/> </set>!  <br/>
+			How can I help you?<br/>
+		</template>
+	</category>
+	<category>
+		<pattern>my self *</pattern>
+		<template>
+			Hello <set name = "username"> <star/> </set>!  <br/>
+			How can I help you?<br/>
+		</template>
+	</category>
+	<category>
+		<pattern>hi dhimu</pattern>
+		<template>
+			Hello <set name = "username"> <star/> </set>!  <br/>
+			How can I help you?<br/>
+		</template>
+	</category>
+	<category>
+		<pattern>dhimu</pattern>
+		<template>
+			Hello <set name = "username"> <star/> </set>!  <br/>
+			How can I help you?<br/>
+		</template>
+	</category>
+    
+	
 	<category>
 		<pattern>yes</pattern>
 		<template>CONGRATULATIONS <get name = "username"/> ! <br/>. Your order has been placed succesfully.
@@ -398,11 +456,13 @@
 			
 			Thanks for choosing "DHIMAN PIZZA SHOP". For any quary please call 16420.<br/>
 			<image></image>
-			<button>
+			
+            <image>https://as1.ftcdn.net/jpg/01/62/07/04/500_F_162070468_NRAjM7OL1RxZfziz6nmvdNJJN9LlofJ2.jpg</image>
+            Your pizza on the way. Thank you <get name = "username"/> for your order.
+            <button>
                 <text>Visit Us</text>
-                <url>https://faecbook.com/dhimanda</url>
+                <url>https://facebook.com/dhimanda</url>
             </button>
-            <image>https://i.ibb.co/sjmwfbX/RMSTU-logo-03-200.png</image>
 			(c) DHIMAN PIZZA SHOP.
 		</template>
 	</category>
@@ -414,9 +474,78 @@
 	</category>
 	
 	
+		<!-- ====================== Graphical Menu ================================ -->
 	
-	
-	 
-	
-	
+	<category>
+	    <pattern>menu2</pattern>
+	    <template>
+	        Thanks for chosing us. Here is our pizza.
+	        	<carousel>
+                    <card>
+                        <title>Special Pizza</title>
+                        <subtitle>Price 450Tk</subtitle>
+                        <image>https://i.ibb.co/db7G9Nb/p1-edit.jpg</image>
+                        <button>
+                            <text>Order Now</text>
+                            <postback>p1</postback>
+                        </button>
+                    </card>
+                    <card>
+                        <title>GOGA Pizza</title>
+                        <subtitle>Price 420Tk</subtitle>
+                        <image>https://i.ibb.co/80Dtbwm/P2.jpg</image>
+                        <button>
+                            <text>Order Now</text>
+                            <postback>p2</postback>
+                        </button>
+                    </card>
+                    <card>
+                        <title>Moghlai Pizza</title>
+                        <subtitle>Price 550Tk</subtitle>
+                        <image>https://i.ibb.co/GFG9NVC/P3.jpg</image>
+                        <button>
+                            <text>Order Now</text>
+                            <postback>p3</postback>
+                        </button>
+                    </card>
+                    <card>
+                        <title>Mojar Pizza</title>
+                        <subtitle>Price 220Tk</subtitle>
+                        <image>https://i.ibb.co/H28Phym/pexels-photo-2918521.jpg</image>
+                        <button>
+                            <text>Order Now</text>
+                            <postback>p4</postback>
+                        </button>
+                    </card>
+                    <card>
+                        <title>Goriber Pizza</title>
+                        <subtitle>Price 99Tk</subtitle>
+                        <image>https://i.ibb.co/SxVBgsc/p6.jpg</image>
+                        <button>
+                            <text>Order Now</text>
+                            <postback>p5</postback>
+                        </button>
+                    </card>
+                    <card>
+                        <title>NameMatro Pizza</title>
+                        <subtitle>Price 29Tk</subtitle>
+                        <image>https://i.ibb.co/fGrnpvb/close-up-photography-of-pizza-1166120.jpg</image>
+                        <button>
+                            <text>Order Now</text>
+                            <postback>p6</postback>
+                        </button>
+                    </card>
+                </carousel>
+                Click left or Right arrow to explore.
+	    </template>
+    </category>
+    
+     <category>
+      <pattern>GOOGLE</pattern>
+      <template>
+            Here you go...
+            <script>var x = window.open('google.com?q=<star />');</script>
+      </template>
+    </category>  
+    
 </aiml>
