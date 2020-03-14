@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+    
+    <!-- Exceptions Starts -->
+    <category>
+		<pattern>*</pattern>
+		<template>
+			<random> 
+				<li>Sorry.I dont understand.</li>
+				<li>Pardone me</li>
+				<li>I am not enough smart to handle this.</li>
+				<li>Sorry, Can you repete please</li>
+			</random>
+		</template>
+	</category>
+	<!-- Exceptions Ends -->
+	
+	<!-- Grettings Starts -->
+	
+  <category>
+		<pattern>hi</pattern>
+		<template>
+			
+			<random>
+				<li>Hello,<br/>How can I help you?</li>
+				<li>Hello,Welcome to DSB Pizza Shop<br/>How can I help you?</li>
+				<li>hello,Take love from DSB Pizza Shop<br/>How can I help you?</li>
+				<li>Hello, Glad to see you here.<br/>How can I help you?</li>
+				<li>Hi<br/>How can I help you?</li>
+				<li>Yes,<br/>How can I help you?</li>
+				<li>Namaste, How can I help you?<br/>How can I help you?</li>
+				<li>Assamulaikum , How can I help you?<br/>How can I help you?</li>
+			</random>
+			<br/>Welcome to DHIMAN PIZZA SHOP.
+			
+		</template>
+	</category>
+	<category><pattern>* hi</pattern><template><srai>hi</srai></template></category>
+	<category><pattern>* hi *</pattern><template><srai>hi</srai></template></category>
+	<category><pattern>hi*</pattern><template><srai>hi</srai></template></category>
+	<category><pattern>hello</pattern><template><srai>hi</srai></template></category>
+	<category><pattern>Hello</pattern><template><srai>hi</srai></template></category>
+	<category><pattern>ho</pattern><template><srai>hi</srai></template></category>
+
+    <!-- Grettings Ends -->
+    
+    <category>
+		<pattern>bye</pattern>
+		<template>
+			<random>
+				<li>bye <get name = "username"/>.Thanks</li>
+				<li><br/>Thanks <get name = "username"/></li>
+				<li>Nice to see you <get name = "username"/>,Take love from  DHIMAN Pizza Shop<br/></li>
+				<li>Bye <get name = "username"/> Glad to see you here.</li>
+				<li>Come again <get name = "username"/></li>
+				<li>Namaste, Happy Shopping</li>
+				<li>Assamulaikum,bye</li>
+			</random>
+		</template>
+	</category>
+	<category><pattern>* bye</pattern><template><srai>bye</srai></template></category>
+	<category><pattern>exit</pattern><template><srai>bye</srai></template></category>
+	<category><pattern>done</pattern><template><srai>bye</srai></template></category>
+	<category><pattern>finish</pattern><template><srai>bye</srai></template></category>
+	<category><pattern>close</pattern><template><srai>bye</srai></template></category>
+	
+	<category><pattern>Thanks</pattern><template>You are most welcome.Take love from  DHIMAN PIZZA SHOP.</template></category>
+	<category><pattern>Thank you</pattern><template>You are most welcome.Take love from  DHIMAN PIZZA SHOP.</template></category>
+	<category><pattern>* Thank *</pattern><template>You are most welcome.Take love from  DHIMAN PIZZA SHOP.</template></category>
+	<category><pattern>Thank *</pattern><template>You are most welcome.Take love from  DHIMAN PIZZA SHOP.</template></category>
+	<category><pattern>* Thank</pattern><template>You are most welcome.Take love from  DHIMAN PIZZA SHOP.</template></category>
+	
+	<category><pattern>* Thanks *</pattern><template>You are most welcome.Take love from  DHIMAN PIZZA SHOP.</template></category>
+	<category><pattern>Thanks *</pattern><template>You are most welcome.Take love from  DHIMAN PIZZA SHOP.</template></category>
+	<category><pattern>* Thanks</pattern><template>You are most welcome.Take love from  DHIMAN PIZZA SHOP.</template></category>
+	
+	<category><pattern>* thank *</pattern><template>You are most welcome.Take love from  DHIMAN PIZZA SHOP.</template></category>
+	<category><pattern>thank *</pattern><template>You are most welcome.Take love from  DHIMAN PIZZA SHOP.</template></category>
+	<category><pattern>* thank</pattern><template>You are most welcome.Take love from  DHIMAN PIZZA SHOP.</template></category>
+	
+	<category><pattern>* thanks *</pattern><template>You are most welcome.Take love from  DHIMAN PIZZA SHOP.</template></category>
+	<category><pattern>thanks *</pattern><template>You are most welcome.Take love from  DHIMAN PIZZA SHOP.</template></category>
+	<category><pattern>* thanks</pattern><template>You are most welcome.Take love from  DHIMAN PIZZA SHOP.</template></category>
+	
+	<category><pattern>* morning</pattern><template>Hello, Gretings from Dhiman PIZZA Shop</template></category>
+	<category><pattern>* noon</pattern><template>Good Noon sir. love from  DHIMAN PIZZA SHOP.</template></category>
+	<category><pattern>* evening</pattern><template>Good Evening</template></category>
+	
+	 <!-- Bye Ends Ends -->
+	 
+	 
+	 <category>
+		<pattern>menu</pattern>
+		<template>Thanks for choosing us.<br/>
+			====: This is our menu list :==== <br/>
+			<ol>
+			    <li>Special Pizza ----- Price: 450Tk [Code : p1]</li>
+			    <li>GOGA Pizza -------- Price: 420Tk [Code : p2]</li>
+			    <li>Moghlai Pizza ----- Price: 550Tk [Code : p3]</li>
+			    <li>Mojar Pizza ------- Price: 250TK [Code : p4]</li>
+			    <li>Goriber Pizza ----- Price: 9TK   [Code : p5]</li>
+			    <li>NameMatro Pizza --- Price: 29TK  [Code : p6]</li>
+		    </ol>
+			To order any item please type item code and press enter.(ex: "p3")<br/>
+			<reply>
+			    <text>Special Pizza</text>
+			    <postback>p1</postback>
+		    </reply>
+		    <reply>
+			    <text>GOGA Pizza</text>
+			    <postback>p2</postback>
+		    </reply>
+		    <reply>
+			    <text>Moghlai Pizza</text>
+			    <postback>Menu</postback>
+		    </reply>
+		    <reply>
+			    <text>Mojar Pizza</text>
+			    <postback>Menu</postback>
+		    </reply>
+		    <reply>
+			    <text>Goriber Pizza</text>
+			    <postback>Menu</postback>
+		    </reply>
+		    <reply>
+			    <text>NameMatro Pizza</text>
+			    <postback>Menu</postback>
+		    </reply>
+		</template>
+	</category>
+	
+	<category><pattern>* menu</pattern><template><srai>menu</srai></template></category>
+	<category><pattern>* menu *</pattern><template><srai>menu</srai></template></category>
+	<category><pattern>menu*</pattern><template><srai>menu</srai></template></category>
+	
+	<!-- ====================    MENU ends ========================== -->
+	
+	<!-- ====================    ORDER PAGE ========================== -->
+	<category>
+		<pattern>order</pattern>
+		<template>
+				To order something please use product code or see menu<br/>
+				To see menu type "menu" and please enter.<br/>
+				<reply>
+				    <text>Watch Menu</text>
+				    <postback>menu</postback>
+			    </reply>
+				DHIMAN PIZZA SHOP - Best pizza of the Univers.
+		</template>
+	</category>
+	<category><pattern>* order</pattern><template><srai>order</srai></template></category>
+	<category><pattern>order *</pattern><template><srai>order</srai></template></category>
+	<category><pattern>* order *</pattern><template><srai>order</srai></template></category>
+	<category><pattern>Order *</pattern><template><srai>order</srai></template></category>
+	
+	<!-- ====================    FAQ  ========================== -->
+	
+	<category>
+		<pattern>what is this</pattern>
+		<template>
+			Hi, I am a bot of DHIMAN PIZZA SHOP. You can order pizza from this shop.
+			Welcome to DHIMAN PIZZA SHOP.
+			<reply>
+				    <text>Watch our Menu</text>
+				    <postback>menu</postback>
+			    </reply>
+		</template>
+	</category>
+	<category><pattern>what</pattern><template><srai>what is this</srai></template></category>
+	<category><pattern>who</pattern><template><srai>what is this</srai></template></category>
+	<category><pattern>who *</pattern><template><srai>what is this</srai></template></category>
+	<category><pattern>dim *</pattern><template><srai>what is this</srai></template></category>
+	
+	
+	
+	<category>
+		<pattern>how</pattern>
+		<template>
+			You can see our menu bye typing "menu" . Then select pizza by pizza code.
+			Welcome to DHIMAN PIZZA SHOP.
+			<reply>
+				    <text>Watch Menu</text>
+				    <postback>menu</postback>
+			</reply>
+		</template>
+	</category>
+	<category><pattern>how *</pattern><template><srai>how</srai></template></category>
+	
+	<category>
+		<pattern>info</pattern>
+		<template>
+		    Hello <get name="username"/>,
+			Here is your info:
+			Number :<get name="usernumber"/>
+			Name :<get name="useraddress"/>
+			<reply>
+				    <text>Watch Menu</text>
+				    <postback>menu</postback>
+			</reply>
+			(c) DHIMAN PIZZA SHOP.
+		</template>
+	</category>
+	<category><pattern>* info *</pattern><template><srai>info</srai></template></category>
+	<category><pattern>* info</pattern><template><srai>info</srai></template></category>
+	<category><pattern>info *</pattern><template><srai>info</srai></template></category>
+	
+	
+	<category>
+		<pattern>my name</pattern>
+		<template>
+			Your name is <get name="username"/>. 
+		</template>
+	</category>
+	<category><pattern>* my name</pattern><template><srai>my name</srai></template></category>
+	<category><pattern>* my name *</pattern><template><srai>my name</srai></template></category>
+	<category><pattern>my name *</pattern><template><srai>my name</srai></template></category>
+	
+	
+	<!-- ====================================================== -->
+	<!-- ====================    P1  ========================== -->
+	<!-- ====================================================== -->
+	
+	<category>
+		<pattern>p1</pattern>
+		<template>
+			<card>
+                 <title>You selected "Special Pizza"</title>
+                 <subtitle>Price:450Tk</subtitle>
+                 <image>https://i.ibb.co/db7G9Nb/p1-edit.jpg</image>
+                 <button>
+                    <text>Order Now</text>
+                    <postback>now</postback>
+                 </button>
+                 <button>
+                    <text>Change</text>
+                    <postback>menu</postback>
+                 </button>
+            </card>
+			
+		</template>
+	</category>
+	<category>
+	    <pattern>now</pattern>
+	    <template>
+	        Enter Shiping info:<br/>
+			type "name" then type your full name and press enter.
+			example "name John Snow"
+	    </template>
+    </category>
+	
+	<category>
+		<pattern>p2</pattern>
+		<template>
+			<card>
+                 <title>You selected "GOGA Pizza"</title>
+                 <subtitle>Price: 420Tk</subtitle>
+                 <image>https://i.ibb.co/80Dtbwm/P2.jpg</image>
+                 <button>
+                    <text>Order Now</text>
+                    <postback>now</postback>
+                 </button>
+                 <button>
+                    <text>Change</text>
+                    <postback>menu</postback>
+                 </button>
+            </card>
+		</template>
+	</category>
+	
+	<category>
+		<pattern>p3</pattern>
+		<template>
+			<card>
+                 <title>You selected "MOGHLAI Pizza"</title>
+                 <subtitle>Price: 550Tk</subtitle>
+                 <image>https://i.ibb.co/GFG9NVC/P3.jpg</image>
+                 <button>
+                    <text>Order Now</text>
+                    <postback>now</postback>
+                 </button>
+                 <button>
+                    <text>Change</text>
+                    <postback>menu</postback>
+                 </button>
+            </card>
+		</template>
+	</category>
+	
+	<category>
+		<pattern>p4</pattern>
+		<template>
+			<card>
+                 <title>You selected "MOJAR Pizza"</title>
+                 <subtitle>Price: 220Tk</subtitle>
+                 <image>https://i.ibb.co/GFG9NVC/P3.jpg</image>
+                 <button>
+                    <text>Order Now</text>
+                    <postback>now</postback>
+                 </button>
+                 <button>
+                    <text>Change</text>
+                    <postback>menu</postback>
+                 </button>
+            </card>
+		</template>
+	</category>
+	
+	
+	<category>
+		<pattern>p5</pattern>
+		<template>
+			<card>
+                 <title>You selected "GORIBER Pizza"</title>
+                 <subtitle>Price: 99Tk</subtitle>
+                 <image>https://i.ibb.co/SxVBgsc/p6.jpg</image>
+                 <button>
+                    <text>Order Now</text>
+                    <postback>now</postback>
+                 </button>
+                 <button>
+                    <text>Change</text>
+                    <postback>menu</postback>
+                 </button>
+            </card>
+		</template>
+	</category>
+	
+	<category>
+		<pattern>p6</pattern>
+		<template>
+			<card>
+                 <title>You selected "NameMatro Pizza"</title>
+                 <subtitle>Price: 29Tk</subtitle>
+                 <image>https://i.ibb.co/SxVBgsc/p6.jpg</image>
+                 <button>
+                    <text>Order Now</text>
+                    <postback>now</postback>
+                 </button>
+                 <button>
+                    <text>Change</text>
+                    <postback>menu</postback>
+                 </button>
+            </card>
+		</template>
+	</category>
+	
+	
+	<category>
+		<pattern>name *</pattern>
+		<template>
+			Here is shipping your info:<br/>
+			Name : <set name = "username"> <star/> </set> <br/>
+			type "number" then type your number and press enter.<br/>
+			example "number 01684216333"
+		</template>
+	</category>
+	<category>
+		<pattern>number *</pattern>
+		<template>
+			
+			Here is your info:<br/>
+			Name : <get name = "username"/><br/>
+			Number : <set name = "usernumber"> <star/> </set><br/>
+			Enter your address by type "address YOUR_ADDRESS"
+			Ex "address MajherBosti,Tobolchori,Rangamati" 
+			
+		</template>
+	</category>
+	
+	<category>
+		<pattern>address *</pattern>
+		<template>
+			
+			Here is your info:<br/>
+			Name : <get name = "username"/><br/>
+			Number : <get name = "usernumber"/><br/>
+			Address : <set name = "useraddress"> <star/> </set><br/>
+			
+			Your order is ready. Please check the info and type "yes" to confirm or "no" to see menu again.	
+			<reply>
+			    <text>YES</text>
+			    <postback>yes</postback>
+		    </reply>
+		    <reply>
+			    <text>NO</text>
+			    <postback>no</postback>
+		    </reply>
+		</template>
+	</category>
+	
+	<category>
+		<pattern>yes</pattern>
+		<template>CONGRATULATIONS <get name = "username"/> ! <br/>. Your order has been placed succesfully.
+		
+			A "Pizza" will be delivered  soon at <get name = "useraddress"/>.<br/>
+						
+			Please pay price by COD after getting your pizza.<br/>
+			
+			Thanks for choosing "DHIMAN PIZZA SHOP". For any quary please call 16420.<br/>
+			<image></image>
+			<button>
+                <text>Visit Us</text>
+                <url>https://faecbook.com/dhimanda</url>
+            </button>
+            <image>https://i.ibb.co/sjmwfbX/RMSTU-logo-03-200.png</image>
+			(c) DHIMAN PIZZA SHOP.
+		</template>
+	</category>
+	<category>
+		<pattern>no</pattern>
+		<template>
+			type "menu" to watch menu.
+		</template>
+	</category>
+	
+	
+	
+	
+	 
+	
+	
+</aiml>
